@@ -157,8 +157,8 @@ if [ $BUILD_PY_EXT -eq 1 ]; then
     do
         echo "build $PY_EXT python module ... please wait"
         cd $PY_EXT/python
-        python3 setup.py build_ext -I $INSTALL_PATH/include -L $INSTALL_PATH/lib -R $INSTALL_PATH/lib >> $LOG_FILE 2>&1
-        python3 setup.py install $PY_INST_USER >> $LOG_FILE 2>&1
+        python setup.py build_ext -I $INSTALL_PATH/include -L $INSTALL_PATH/lib -R $INSTALL_PATH/lib >> $LOG_FILE 2>&1
+        python setup.py install $PY_INST_USER >> $LOG_FILE 2>&1
         if [ $? -ne 0 ]; then
             echo "python module failed, please see logfile for more details..."
         fi
